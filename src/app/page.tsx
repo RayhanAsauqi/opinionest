@@ -1,113 +1,229 @@
-import Image from 'next/image'
+import React from "react";
+import AppButton from "@/components/app/Button";
+import Image from "next/image";
 
-export default function Home() {
+const titleButton = [
+  {
+    id: 1,
+    text: "Say it now",
+    className:
+      "bg-[#00A9FF] px-8 py-3 rounded text-white text-base font-bold leading-normal",
+  },
+  {
+    id: 2,
+    text: "Explore Talks",
+    className:
+      "border-[#00A9FF] px-8 py-3 rounded text-[#00A9FF] border text-base font-bold leading-normal",
+  },
+];
+
+const logoUniversity = [
+  {
+    id: 1,
+    logo: "Logo Univ",
+  },
+  {
+    id: 2,
+    logo: "Logo Prodi",
+  },
+  {
+    id: 3,
+    logo: "Logo sema",
+  },
+  {
+    id: 4,
+    logo: "Logo hima",
+  },
+  {
+    id: 5,
+    logo: "Logo Okup",
+  },
+];
+
+const features = [
+  {
+    id: 1,
+    title: "Anonymous",
+    icon: "/icons/anonymous.svg",
+    text: "Give your feelings and opinion freely and without worries. We provide full anonymity to ensure honest expression",
+  },
+  {
+    id: 2,
+    title: "Our Features",
+    text: "Anonymous, inclusivity, and respect for privacy are integrated to support continuous growth and improvement",
+  },
+  {
+    id: 3,
+    title: "Easy to use",
+    icon: "/privacy.svg",
+    text: "Experience simplicity at its best! Our user-friendly interface makes it easy for you to navigate, share feedback, and explore",
+  },
+  {
+    id: 4,
+    title: "Privacy",
+    icon: "/icons/anonymous.svg",
+    text: "You are free to express criticism and suggestions without having to reveal your identity. We put every user's security and privacy first",
+  },
+  {
+    id: 5,
+    title: "Secure",
+    icon: "/icons/anonymous.svg",
+    text: "We guarantee the security of this platform. Every piece of information you share will be securely stored and inaccessible to unauthorized parties",
+  },
+  {
+    id: 6,
+    title: "Interactive",
+    icon: "/icons/anonymous.svg",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras a nulla quis dolor aliquam tristique. In sed cursus aug",
+  },
+];
+function page() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <>
+      {/* Hero section */}
+      <section className="py-[120px]">
+        <div className="grid justify-center ">
+          <h1 className="text-4xl font-semibold leading-[170%] grid">
+            We Love Helping You To Share{" "}
+            <span className="text-[#00A9FF] text-center">
+              Your Feelings & Opinions
+            </span>
+          </h1>
         </div>
-      </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
+        <div className="grid justify-center py-6">
+          <h1 className="text-base font-normal leading-[30px]">
+            The best place for you{" "}
+            <span className="text-[#00A9FF] ">
+              {" "}
+              to deliver critiques, aspirations,
             </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+          </h1>
+          <h1 className="text-base font-normal leading-[30px] text-center">
+            <span className="text-[#00A9FF] "> and reports</span> on all aspects
+            of campus life.
+          </h1>
+        </div>
+        <div className="flex justify-center gap-4">
+          {titleButton.map((title) => (
+            <AppButton
+              title={title.text}
+              className={title.className || ""}
+              key={title.id}
+            />
+          ))}
+        </div>
+      </section>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+      {/* logo section */}
+      <section className="py-[60px]">
+        <div className="grid justify-center">
+          <h1 className="text-[#737373] text-base font-medium leading-normal text-center">
+            Supported by all organizations and institutions in paramadina
+            university
+          </h1>
+          <div className="flex pt-10 gap-[60px] p-[10px]">
+            {logoUniversity.map((item) => (
+              <h1
+                key={item.id}
+                className="text-[#737373] text-4xl font-medium leading-normal"
+              >
+                {item.logo}
+              </h1>
+            ))}
+          </div>
+        </div>
+      </section>
+      {/* Features section */}
+      <section className="px-[104px] py-[60px]">
+        <div className="grid grid-cols-3 gap-x-4 gap-6">
+          {features.map((item) => (
+            <div
+              className=" border-[1.25px] rounded-[12.5px] pt-10 shadow-[0px_15px_30px_0px_rgba(0,0,0,0.10)] px-10 pb-[110px]"
+              key={item.id}
+            >
+              {item.icon && (
+                <div className="bg-[#00A9FF] rounded-full px-6 py-6 w-20 h-20 flex items-center justify-center ">
+                  <Image
+                    src={item.icon}
+                    alt={item.title}
+                    width={32}
+                    height={32}
+                  />
+                </div>
+              )}
+              <h1 className="text-[#144B66] text-xl font-semibold pt-7">
+                {item.title}
+              </h1>
+              <p className="text-[#737373] text-base font-normal leading-normal">
+                {item.text}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+      {/* section how to say it */}
+      <section className="pt-[60px]">
+        <h1 className="text-center text-[32px] font-semibold leading-[44px] -tracking-[-0.64px] pb-[60px]">
+          How to say it?
+        </h1>
+        <div className="pl-[504px]">
+          <Image
+            src="/vector/vector1/arrowRight.svg"
+            alt="arrow right"
+            width={64}
+            height={64}
+          />
+        </div>
+        <div className="flex pl-[104px] gap-[27px]">
+          <div className="w-[400px]">
+            <h1 className="text-right underline text-xl font-medium leading-normal">
+              01
+            </h1>
+            <h1 className="text-xl italic font-medium text-[#00A9FF] leading-normal text-right">
+              Sign in to your account
+            </h1>
+            <p className="text-[#737373] text-right text-base font-normal leading-normal">
+              Login to your account by filling in your username/email and
+              password. Create an account first if you don&apos;t have one.
+            </p>
+          </div>
+          <div className="pt-[20px]">
+            <Image
+              src="/vector/vector1/dashed1.svg"
+              alt="dashed vector sign in"
+              width={352.623}
+              height={219}
+            />
+          </div>
+        </div>
+        <div className="flex justify-center pl-[250px] pr-[51.62px]">
+          <div className="pt-[-40px]  absolute top">
+            <Image
+              src="/vector/vector2/searchForm.svg"
+              alt="search form"
+              width={64}
+              height={64}
+            />
+          </div>
+        </div>
+        <div className="flex justify-center gap-[22px] relative z-20">
+          <div className="pt-[29.11px]">
+            <Image
+              src="/vector/vector2/dashed2.svg"
+              alt="dashed vector find the form"
+              width={320.64}
+              height={217.385}
+            />
+          </div>
+          <div className="">
+            <h1 className="text-right underline text-xl font-medium leading-normal">
+              02
+            </h1>
+          </div>
+        </div>
+      </section>
+    </>
+  );
 }
+
+export default page;
