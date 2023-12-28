@@ -1,23 +1,23 @@
 import React from "react";
 
 function Input(props: {
-  placeholder: string;
-  type: string;
-  className: string;
+  placeholder?: string;
+  type?: string;
+  className?: string;
+  labelClassName?: string;
+  label?: string;
 }) {
   return (
     <>
       <form>
-         <label htmlFor="default-search" className="mb-2 text-sm font-medium">
-          Search
-        </label>
         <div className="py-4 ">
-          <div className="relative ">
+          <div className="relative  ">
+            <label htmlFor={props.label} className={props.labelClassName}>{props.label}</label>
             <input
               type={props.type}
-              id="default-search"
               className={props.className}
               placeholder={props.placeholder}
+              required
             />
           </div>
         </div>

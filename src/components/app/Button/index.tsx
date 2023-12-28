@@ -3,25 +3,41 @@ import Image from "next/image";
 
 function AppButton(props: {
   title: string;
-  className: string;
+  className?: string;
   src?: string;
   alt?: string;
   width?: number;
   height?: number;
+  isSpeakView?: boolean;
+  prefixIcon?: string;
+  suffixIcon?: string;
 }) {
-  return (
-    <>
-      <button className={props.className}>
-        <h1 className="">{props.title}</h1>
-        <Image
-          src={props.src || ""}
-          alt={props.alt || ""}
-          width={props.width}
-          height={props.height}
-        />
-      </button>
-    </>
-  );
+  if (props.isSpeakView && props.title) {
+    return (
+      <>
+        <button className={props.className}>
+          {props.prefixIcon && (
+            <Image
+              src={props.prefixIcon}
+              alt={props.alt || ""}
+              width={props.width}
+              height={props.height}
+            />
+          )}
+          <span>{props.title}</span>
+          {props.suffixIcon && (
+            <Image
+              src={props.suffixIcon}
+              alt={props.alt || ""}
+              width={props.width}
+              height={props.height}
+            />
+          )}
+        </button>
+      </>
+    );
+  }
+  return null;
 }
 
 export default AppButton;
