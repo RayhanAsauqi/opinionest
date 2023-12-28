@@ -57,6 +57,7 @@ export default function Home() {
                   type="search"
                   placeholder="Search Mockups, Logos..."
                   className="block w-full p-4  text-smrounded-lg border rounded-md shadow-[0px_0px_2px_rgba(0,0,0,0.10)]"
+                  
                 />
               </div>
             ))}

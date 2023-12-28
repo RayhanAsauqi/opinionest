@@ -17,7 +17,7 @@ const itemNavbar = [
   {
     id: 3,
     title: "Speaks",
-    to: "/speaks",
+    to: "/speak/form",
   },
 ];
 
@@ -37,11 +37,11 @@ function Navbar() {
         </div>
         <AppButton
           title="Sign in"
-          className="bg-[#00A9FF] px-8 py-3 rounded text-white text-base font-bold leading-normal "
-          src="/vector/vector1/01.svg"
+          className="bg-[#00A9FF] px-8 py-3 rounded text-white text-base font-bold leading-normal flex "
           alt="sign in"
           width={20}
           height={20}
+          isSpeakView={true}
         />
       </nav>
     </div>
