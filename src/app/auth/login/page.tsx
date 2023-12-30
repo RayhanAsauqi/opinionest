@@ -1,5 +1,4 @@
 import AppButton from "@/components/app/Button/index";
-import Input from "@/components/app/Input/index";
 import Image from "next/image";
 
 const inputData = [
@@ -19,7 +18,7 @@ const inputData = [
 export default function Home() {
   return (
     <>
-      <div className="flex justify-center pt-[60px] pb-[71.64px]">
+      <div className="flex justify-center pt-[60px] pb-[71.64px]  ">
         <Image
           src="/opininest.svg"
           alt="My Image"
@@ -28,7 +27,7 @@ export default function Home() {
         />
       </div>
       <div className="flex justify-center">
-        <div className=" border-[1px] px-[104px] py-[75px] rounded-md  border-blue-500 bg-gradient-to-tl from-transparent to-opacity-20">
+        <div className=" border-[1px]  px-[104px] py-[75px] rounded-md  border-blue-500 bg-gradient-to-tl from-transparent to-opacity-20">
           <div className="pb-[60px]">
             <h1 className=" font-medium leading-normal text-center">
               Welcome to OpinioNest
@@ -38,7 +37,7 @@ export default function Home() {
             </p>
           </div>
           <div>
-            <div className="border rounded-md shadow-[0px_0px_2px_rgba(0,0,0,0.10)]">
+            <div className="border rounded-md shadow-[0px_0px_2px_rgba(0,0,0,0.10)] cursor-pointer  ">
               <div className="flex items-center justify-center px-[120px] py-[18px] gap-2">
                 <Image
                   src="/iconGoogle.svg"
@@ -52,19 +51,18 @@ export default function Home() {
             <h1 className="pt-4 text-center">or sign in with</h1>
 
             {inputData.map((input) => (
-              <div key={input.id}>
-                <Input
-                  type="search"
-                  placeholder="Search Mockups, Logos..."
-                  className="block w-full p-4  text-smrounded-lg border rounded-md shadow-[0px_0px_2px_rgba(0,0,0,0.10)]"
-                  
+              <div key={input.id} className="grid gap-5">
+                <input
+                  type="text"
+                  placeholder="Type here"
+                  className="input input-bordered w-full py-[18px] border rounded "
                 />
               </div>
             ))}
           </div>
           <AppButton
             title="Sign in"
-            className="text-white py-[18px] flex justify-center"
+            className="btn text-white py-[18px] flex justify-center"
           />
         </div>
       </div>

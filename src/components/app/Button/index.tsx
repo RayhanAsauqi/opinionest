@@ -9,12 +9,14 @@ function AppButton(props: {
   width?: number;
   height?: number;
   isSpeakView?: boolean;
+  textStyles?: string;
   prefixIcon?: string;
   suffixIcon?: string;
 }) {
   if (props.isSpeakView && props.title) {
     return (
       <>
+
         <button className={props.className}>
           {props.prefixIcon && (
             <Image
@@ -24,7 +26,7 @@ function AppButton(props: {
               height={props.height}
             />
           )}
-          <span>{props.title}</span>
+          <span className={props.textStyles}>{props.title}</span>
           {props.suffixIcon && (
             <Image
               src={props.suffixIcon}
