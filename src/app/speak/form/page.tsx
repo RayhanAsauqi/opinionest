@@ -10,7 +10,7 @@ function room() {
         <Link href="/">
           <AppButton
             title="Back To Home"
-            className="text-[#144B66] flex items-center gap-1 border p-[10px] rounded bg-[#E2F5FF]"
+            className="btn text-[#144B66] flex items-center gap-1 border p-[10px] rounded bg-[#E2F5FF]"
             prefixIcon="/icons/arrowLeft.svg"
             width={20}
             height={20}
@@ -21,9 +21,7 @@ function room() {
           Go ahead and say what you want to say
         </h1>
       </div>
-
-      <FormSpeak />
-      {/* <DropDown /> */}
+        <FormSpeak />
     </section>
   );
 }

@@ -37,7 +37,7 @@ function Navbar() {
         </div>
         <AppButton
           title="Sign in"
-          className="bg-[#00A9FF] px-8 py-3 rounded text-white text-base font-bold leading-normal flex "
+          className="btn bg-[#00A9FF] px-8 py-3 rounded text-white text-base font-bold leading-normal flex "
           alt="sign in"
           width={20}
           height={20}

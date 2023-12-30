@@ -189,36 +189,18 @@ function page() {
           </div>
           <div className="pt-[20px]">
             <Image
-              src="/vector/vector1/dashed1.svg"
+              src="/dashHero.svg"
               alt="dashed vector sign in"
-              width={352.623}
-              height={219}
+              width={517.578}
+              height={956}
             />
           </div>
-        </div>
-        <div className="flex justify-center pl-[250px] pr-[51.62px]">
-          <div className="pt-[-40px]  absolute top">
-            <Image
-              src="/vector/vector2/searchForm.svg"
-              alt="search form"
-              width={64}
-              height={64}
-            />
-          </div>
-        </div>
-        <div className="flex justify-center gap-[22px] relative z-20">
-          <div className="pt-[29.11px]">
-            <Image
-              src="/vector/vector2/dashed2.svg"
-              alt="dashed vector find the form"
-              width={320.64}
-              height={217.385}
-            />
-          </div>
-          <div className="">
-            <h1 className="text-right underline text-xl font-medium leading-normal">
-              02
-            </h1>
+          <div className="flex justify-center gap-[22px] relative z-20">
+            <div className="">
+              <h1 className="text-right underline text-xl font-medium leading-normal">
+                02
+              </h1>
+            </div>
           </div>
         </div>
       </section>
