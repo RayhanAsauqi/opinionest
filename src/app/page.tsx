@@ -1,19 +1,31 @@
 import React from "react";
 import AppButton from "@/components/app/Button";
 import Image from "next/image";
+import Anonymous from "../../public/icons/anonymous";
+import Navbar from "@/components/Navbar";
+import CardFeatures from "@/components/CardFeatures/Index";
+import EasyToUse from "../../public/icons/easyToUse";
+import Privacy from "../../public/icons/privacy";
+import Secure from "../../public/icons/secure";
+import Interactive from "../../public/icons/interactive";
+import Dashed1 from "../../public/svgs/dashed1";
+import Dashed2 from "../../public/svgs/dashed2";
+import Dashed3 from "../../public/svgs/dashed3";
+import Dashed4 from "../../public/svgs/dashed4";
+import Footer from "@/components/Footer";
 
 const titleButton = [
   {
     id: 1,
     text: "Say it now",
     className:
-      "bg-[#00A9FF] px-8 py-3 rounded text-white text-base font-bold leading-normal",
+      "bg-primary px-8 py-3 rounded text-white text-[16px] font-pop font-bold leading-normal",
   },
   {
     id: 2,
     text: "Explore Talks",
     className:
-      "border-[#00A9FF] px-8 py-3 rounded text-[#00A9FF] border text-base font-bold leading-normal",
+      "border-primary px-8 py-3 rounded text-primary border text-[16px] font-pop font-bold leading-normal",
   },
 ];
 
@@ -40,50 +52,15 @@ const logoUniversity = [
   },
 ];
 
-const features = [
-  {
-    id: 1,
-    title: "Anonymous",
-    icon: "/icons/anonymous.svg",
-    text: "Give your feelings and opinion freely and without worries. We provide full anonymity to ensure honest expression",
-  },
-  {
-    id: 2,
-    title: "Our Features",
-    text: "Anonymous, inclusivity, and respect for privacy are integrated to support continuous growth and improvement",
-  },
-  {
-    id: 3,
-    title: "Easy to use",
-    icon: "/privacy.svg",
-    text: "Experience simplicity at its best! Our user-friendly interface makes it easy for you to navigate, share feedback, and explore",
-  },
-  {
-    id: 4,
-    title: "Privacy",
-    icon: "/icons/anonymous.svg",
-    text: "You are free to express criticism and suggestions without having to reveal your identity. We put every user's security and privacy first",
-  },
-  {
-    id: 5,
-    title: "Secure",
-    icon: "/icons/anonymous.svg",
-    text: "We guarantee the security of this platform. Every piece of information you share will be securely stored and inaccessible to unauthorized parties",
-  },
-  {
-    id: 6,
-    title: "Interactive",
-    icon: "/icons/anonymous.svg",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras a nulla quis dolor aliquam tristique. In sed cursus aug",
-  },
-];
 function page() {
   return (
-    <>
+    <div className="flex flex-col overflow-hidden">
+      {/* Navbar */}
+      <Navbar />
       {/* Hero section */}
       <section className="py-[120px]">
         <div className="grid justify-center ">
-          <h1 className="text-4xl font-semibold leading-[170%] grid">
+          <h1 className="text-black text-[36px] font-pop font-semibold leading-[170%] grid">
             We Love Helping You To Share{" "}
             <span className="text-[#00A9FF] text-center">
               Your Feelings & Opinions
@@ -91,14 +68,14 @@ function page() {
           </h1>
         </div>
         <div className="grid justify-center py-6">
-          <h1 className="text-base font-normal leading-[30px]">
+          <h1 className="text-black font-pop text-[16px] font-normal leading-[30px]">
             The best place for you{" "}
             <span className="text-[#00A9FF] ">
               {" "}
               to deliver critiques, aspirations,
             </span>
           </h1>
-          <h1 className="text-base font-normal leading-[30px] text-center">
+          <h1 className="text-black font-pop text-[16px] font-normal leading-[30px] text-center">
             <span className="text-[#00A9FF] "> and reports</span> on all aspects
             of campus life.
           </h1>
@@ -109,6 +86,10 @@ function page() {
               title={title.text}
               className={title.className || ""}
               key={title.id}
+              alt="sign in"
+              width={20}
+              height={20}
+              isSpeakView={true}
             />
           ))}
         </div>
@@ -135,30 +116,41 @@ function page() {
       </section>
       {/* Features section */}
       <section className="px-[104px] py-[60px]">
-        <div className="grid grid-cols-3 gap-x-4 gap-6">
-          {features.map((item) => (
-            <div
-              className=" border-[1.25px] rounded-[12.5px] pt-10 shadow-[0px_15px_30px_0px_rgba(0,0,0,0.10)] px-10 pb-[110px]"
-              key={item.id}
-            >
-              {item.icon && (
-                <div className="bg-[#00A9FF] rounded-full px-6 py-6 w-20 h-20 flex items-center justify-center ">
-                  <Image
-                    src={item.icon}
-                    alt={item.title}
-                    width={32}
-                    height={32}
-                  />
-                </div>
-              )}
-              <h1 className="text-[#144B66] text-xl font-semibold pt-7">
-                {item.title}
-              </h1>
-              <p className="text-[#737373] text-base font-normal leading-normal">
-                {item.text}
-              </p>
-            </div>
-          ))}
+        <div className="grid grid-cols-3 gap-[16px]">
+          <CardFeatures
+            icon={<Anonymous />}
+            title="Anonymous"
+            desc="Give your feelings and opinion freely and without worries. We provide full anonymity to ensure honest expression"
+          />
+          <div className="flex flex-col h-[400px] justify-center items-center">
+            <h3 className="text-black font-pop text-[32px] font-semibold leading-normal">
+              Our Features
+            </h3>
+            <p className="text-komen font-pop text-[16px] font-normal leading-normal text-center">
+              Anonymous, inclusivity, and respect for privacy are integrated to
+              support continuous growth and improvement
+            </p>
+          </div>
+          <CardFeatures
+            icon={<EasyToUse />}
+            title="Easy to use"
+            desc="Experience simplicity at its best! Our user-friendly interface makes it easy for you to navigate, share feedback, and explore"
+          />
+          <CardFeatures
+            icon={<Privacy />}
+            title="Privacy"
+            desc="You are free to express criticism and suggestions without having to reveal your identity. We put every user's security and privacy first"
+          />
+          <CardFeatures
+            icon={<Secure />}
+            title="Interactive"
+            desc="We guarantee the security of this platform. Every piece of information you share will be securely stored and inaccessible to unauthorized parties"
+          />
+          <CardFeatures
+            icon={<Interactive />}
+            title="Easy to use"
+            desc="Experience simplicity at its best! Our user-friendly interface makes it easy for you to navigate, share feedback, and explore"
+          />
         </div>
       </section>
       {/* section how to say it */}
@@ -174,37 +166,116 @@ function page() {
             height={64}
           />
         </div>
-        <div className="flex pl-[104px] gap-[27px]">
-          <div className="w-[400px]">
-            <h1 className="text-right underline text-xl font-medium leading-normal">
+        <div className="grid grid-cols-3 pl-[104px] gap-[27px]">
+          <div className="flex flex-col items-end">
+            <p className="text-right underline text-xl font-medium leading-normal">
               01
-            </h1>
-            <h1 className="text-xl italic font-medium text-[#00A9FF] leading-normal text-right">
+            </p>
+            <h3 className="text-primary font-pop text-[20px] italic font-medium leading-normal">
               Sign in to your account
-            </h1>
-            <p className="text-[#737373] text-right text-base font-normal leading-normal">
+            </h3>
+            <p className="text-komen font-pop text-[16px] font-normal leading-normal text-right">
               Login to your account by filling in your username/email and
               password. Create an account first if you don&apos;t have one.
             </p>
           </div>
-          <div className="pt-[20px]">
-            <Image
-              src="/dashHero.svg"
-              alt="dashed vector sign in"
-              width={517.578}
-              height={956}
-            />
+          <div className="flex flex-row items-center justify-center">
+            <Dashed1 />
           </div>
-          <div className="flex justify-center gap-[22px] relative z-20">
-            <div className="">
-              <h1 className="text-right underline text-xl font-medium leading-normal">
+        </div>
+        <div className="grid grid-cols-3 gap-[22px] relative z-20 mt-[40px]">
+          <div></div>
+          <div className="pt-[29.11px] flex flex-row items-center justify-center relative">
+            <div className="-top-[70px] right-[50px] absolute ">
+              <Image
+                src="/vector/vector2/searchForm.svg"
+                alt="search form"
+                width={64}
+                height={64}
+                className=""
+              />
+              <p className="text-right underline text-xl font-medium leading-normal">
                 02
-              </h1>
+              </p>
             </div>
+            <Dashed2 />
+          </div>
+          <div className="flex flex-col items-start -ml-[50px]">
+            <h3 className="text-primary font-pop text-[20px] italic font-medium leading-normal">
+              Find the form
+            </h3>
+            <p className="text-komen font-pop text-[16px] font-normal leading-normal text-left">
+              Login to your account by filling in your username/email and
+              password. Create an account first if you don&apos;t have one.
+            </p>
+          </div>
+        </div>
+        <div className="grid grid-cols-3 pl-[104px] gap-[27px] mt-[40px]">
+          <div className="flex flex-col items-end -mr-[100px]">
+            <h3 className="text-primary font-pop text-[20px] italic font-medium leading-normal">
+              Fill in the form
+            </h3>
+            <p className="text-komen font-pop text-[16px] font-normal leading-normal text-right">
+              Fill in each field on the form as required. Make sure your target
+              and the type of &quot;speaks&quot;.
+            </p>
+          </div>
+          <div className="flex flex-row items-center justify-center  relative">
+            <div className="-top-[80px]  left-[110px] absolute ">
+              <Image
+                src="/vector/vector3/note.svg"
+                alt="search form"
+                width={64}
+                height={64}
+                className=""
+              />
+              <p className="text-left underline text-xl font-medium leading-normal">
+                02
+              </p>
+            </div>
+            <Dashed3 className="-mr-[250px]" />
+          </div>
+        </div>
+        <div className="grid grid-cols-3 pl-[104px] gap-[27px] mt-[80px]">
+          <div></div>
+          <div className="flex flex-row items-center justify-center  relative">
+            <div className="-top-[140px] -right-[20px] absolute">
+              <Image
+                src="/vector/vector3/note.svg"
+                alt="search form"
+                width={64}
+                height={64}
+                className=""
+              />
+              <p className="text-right underline text-xl font-medium leading-normal">
+                04
+              </p>
+            </div>
+            <Dashed4 className="-mr-[300px]" />
+          </div>
+          <div className="flex flex-col items-start -mt-[40px] ml-[20px]">
+            <h3 className="text-primary font-pop text-[20px] italic font-medium leading-normal">
+              Fill in the form
+            </h3>
+            <p className="text-komen font-pop text-[16px] font-normal leading-normal text-left">
+              Fill in each field on the form as required. Make sure your target
+              and the type of &quot;speaks&quot;.
+            </p>
           </div>
         </div>
       </section>
-    </>
+
+      <div className="flex flex-col justify-center items-center -mr-[200px] mt-[40px]">
+        <p className="text-primary font-pop text-[20px] font-medium leading-normal text-center">
+          It&apos;s done
+        </p>
+        <p className="text-komen font-pop text-[16px] font-normal leading-normal text-center mt-[8px]">
+          Once sent, we will forward your message to your <br />
+          destination.
+        </p>
+      </div>
+      <Footer />
+    </div>
   );
 }
 

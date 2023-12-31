@@ -11,9 +11,7 @@ function DropZone(props: {
   return (
     <div>
       <div className="flex items-center justify-center w-full">
-        <label
-          className="flex flex-col items-center justify-center w-full  border-2 border-gray-300  rounded-lg cursor-pointer "
-        >
+        <label className="flex flex-col items-center justify-center border-[1px] border-[#D5D5D5] rounded-[10px] w-full  text-black font-pop text-[16px] font-normal leading-normal  outline-none  px-[20px] mt-[8px] cursor-pointer">
           <div className={props.iconPosition}>
             <Image
               id={props.id}
@@ -23,7 +21,7 @@ function DropZone(props: {
               height={props.height}
             />
           </div>
-          <input  type="file" className="hidden " />
+          <input type="file" className="hidden " />
         </label>
       </div>
     </div>

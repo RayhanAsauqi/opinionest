@@ -1,9 +1,10 @@
 import React from "react";
-import DropDown from "@/components/app/Dropdown";
+import DropDown from "@/components/app/Tipe";
 
 import DropZone from "@/components/app/DropZone/index";
-import AppButton from "@/components/app/Button";
 import Link from "next/link";
+import Tipe from "@/components/app/Tipe";
+import InputTo from "@/components/InputTo/Index";
 
 function FormSpeak() {
   const TypeTes = [
@@ -19,28 +20,37 @@ function FormSpeak() {
       <section className="pb-[60px]">
         <div className="border p-5 rounded-[20px]">
           <div className="grid grid-cols-3 items-center gap-5">
-            <input
-              type="text"
-              placeholder="Type here"
-              className="input input-bordered  w-full h-full border rounded text-[#737373] focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none "
-            />
-            <DropDown item={TypeTes} />
-            <DropDown item={TypeTes} />
+            <div>
+              <label
+                htmlFor="#"
+                className="text-black font-pop text-[16px] font-normal leading-normal"
+              >
+                Title <span className="text-[#F00]">*</span>
+              </label>
+              <input
+                type="text"
+                placeholder="Gimme a title"
+                className="border-[#D5D5D5] w-full border rounded-[10px] text-[#737373] font-pop text-[16px] font-normal leading-normal mt-[8px] focus:outline-none py-[18px] px-[20px]"
+              />
+            </div>
+            <Tipe title="Tipe" />
+            <InputTo title="To" />
           </div>
 
-          <div>
-            <div className="grid grid-cols-3 gap-4">
-              <div className="col-span-2 pt-4">
-                <label htmlFor="message">Message</label>
-                <textarea
-                  id="message"
-                  className="border rounded-lg  grid w-full  text-[#737373] sm:text-md focus:border-blue-500 focus:ring-2 focus:ring-blue-500 outline-none  pt-5 pl-5"
-                  placeholder="say it here"
-                  rows={14}
-                />
-              </div>
-
-              <div className="grid pt-4">
+          <div className="grid grid-cols-3 gap-4 mt-[16px]">
+            <div className="col-span-2">
+              <label htmlFor="message" className="text-black">
+                Message <span className="text-[#F00]">*</span>
+              </label>
+              <textarea
+                id="message"
+                className="border-[1px] border-[#D5D5D5] rounded-[10px] grid w-full h-[366px] text-black font-pop text-[16px] font-normal leading-normal  outline-none  px-[20px] pt-[20px] mt-[8px]"
+                placeholder="say it here"
+                rows={14}
+              />
+            </div>
+            <div className="grid gap-[16px]">
+              <div>
                 <label htmlFor="foto">Foto</label>
                 <DropZone
                   id="vidio"
@@ -50,6 +60,8 @@ function FormSpeak() {
                   height={24}
                   iconPosition="py-[33px]"
                 />
+              </div>
+              <div>
                 <label htmlFor="vidio">Video</label>
                 <DropZone
                   id="vidio"
@@ -59,20 +71,24 @@ function FormSpeak() {
                   height={24}
                   iconPosition="py-[33px]"
                 />
-                <label htmlFor="tags">Tags</label>
+              </div>
+              <div>
+                <label htmlFor="tags">
+                  Tags <span className="text-[#F00]">*</span>
+                </label>
                 <input
                   id="tags"
                   type="text"
-                  className="input input-bordered w-full h-[90px] rounded text-[#737373]"
+                  className="input input-bordered w-full h-[90px] rounded text-[#737373] mt-[8px]"
                 />
               </div>
             </div>
           </div>
           <div className="grid grid-cols-5 pt-4 pb-5">
-            <div className="w-[220px] flex justify-center items-center gap-1 px-[23px] py-[18px] border rounded bg-[#E2F5FF]">
+            <div className="w-[220px] flex flex-row justify-center items-center px-[23px] py-[18px] rounded-[10px] bg-[#E2F5FF] gap-[8px]">
               <input
                 type="checkbox"
-                className="checkbox rounded-none border "
+                className="checkbox rounded-none border-secondary border w-[14px] h-[14px]"
               />
               <h1 className="text-[#144B66] text-base font-normal leading-normal">
                 Set to anonymous
@@ -81,7 +97,9 @@ function FormSpeak() {
             <div className="col-span-4">
               <Link href="/speak/form/success">
                 <button className="btn w-full py-[18px] btn-lg bg-[#00A9FF] text-white">
-                  <span className="text-base font-normal">Send</span>
+                  <span className="text-white font-pop text-[16px] font-normal leading-normal">
+                    Send
+                  </span>
                 </button>
               </Link>
             </div>

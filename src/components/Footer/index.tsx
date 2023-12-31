@@ -62,7 +62,7 @@ const itemFooter = [
   },
 ];
 
-function index() {
+function Footer() {
   return (
     <>
       <div className="px-[60px] pt-[60px]">
@@ -106,4 +106,4 @@ function index() {
   );
 }
 
-export default index;
+export default Footer;

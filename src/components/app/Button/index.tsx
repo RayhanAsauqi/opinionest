@@ -16,7 +16,6 @@ function AppButton(props: {
   if (props.isSpeakView && props.title) {
     return (
       <>
-
         <button className={props.className}>
           {props.prefixIcon && (
             <Image

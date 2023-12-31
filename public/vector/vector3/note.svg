@@ -1,0 +1,12 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Frame 2147223089">
+<g id="Group 238934">
+<path id="Line 18" d="M19.5 13.25H42.625" stroke="#144B66" stroke-width="0.9375" stroke-linecap="round"/>
+<path id="Line 19" d="M22.625 18.25H45.75" stroke="#144B66" stroke-width="0.9375" stroke-linecap="round"/>
+<path id="Line 20" d="M19.5 23.25H42.625" stroke="#144B66" stroke-width="0.9375" stroke-linecap="round"/>
+<path id="Line 21" d="M22.625 28.25H45.75" stroke="#144B66" stroke-width="0.9375" stroke-linecap="round"/>
+<path id="Line 22" d="M19.5 33.25H42.625" stroke="#144B66" stroke-width="0.9375" stroke-linecap="round"/>
+<path id="Subtract" fill-rule="evenodd" clip-rule="evenodd" d="M47.375 8.25H16.125C15.0895 8.25 14.25 9.08947 14.25 10.125V19.5H13V10.125C13 8.39911 14.3991 7 16.125 7H47.375C49.1009 7 50.5 8.39911 50.5 10.125V43H49.25V10.125C49.25 9.08947 48.4105 8.25 47.375 8.25ZM13 22.5V53.875C13 55.6009 14.3991 57 16.125 57H47.375C49.1009 57 50.5 55.6009 50.5 53.875V50H49.25V53.875C49.25 54.9105 48.4105 55.75 47.375 55.75H16.125C15.0895 55.75 14.25 54.9105 14.25 53.875V22.5H13Z" fill="#144B66"/>
+</g>
+</g>
+</svg>

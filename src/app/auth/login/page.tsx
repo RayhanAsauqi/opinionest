@@ -1,24 +1,18 @@
-import AppButton from "@/components/app/Button/index";
 import Image from "next/image";
-
-const inputData = [
-  {
-    id: 1,
-    placholder: "Email",
-    type: "email",
-  },
-
-  {
-    id: 2,
-    placholder: "Password",
-    type: "password",
-  },
-];
+import Pattern from "../../../../public/svgs/pattern";
+import PatternLogin2 from "../../../../public/svgs/pattern-login-2";
+import PatternLogin3 from "../../../../public/svgs/pattern-login-3";
 
 export default function Home() {
   return (
-    <>
-      <div className="flex justify-center pt-[60px] pb-[71.64px]  ">
+    <div className="flex flex-col pb-[212px] relative">
+      <div className="absolute top-0">
+        <Pattern />
+      </div>
+      <div className="absolute bottom-0 -z-10">
+        <PatternLogin2 />
+      </div>
+      <div className="flex justify-center pt-[60px] pb-[71.64px]">
         <Image
           src="/opininest.svg"
           alt="My Image"
@@ -26,46 +20,48 @@ export default function Home() {
           height={80.364}
         />
       </div>
-      <div className="flex justify-center">
-        <div className=" border-[1px]  px-[104px] py-[75px] rounded-md  border-blue-500 bg-gradient-to-tl from-transparent to-opacity-20">
+      <div className="flex justify-center relative">
+        <div className="absolute -top-[200px] right-[150px] -z-10">
+          <PatternLogin3 />
+        </div>
+        <div className="border-[1px] px-[104px] py-[75px] rounded-md border-primary bg-gradient-to-br from-transparent to-white via-white shadow-card">
           <div className="pb-[60px]">
-            <h1 className=" font-medium leading-normal text-center">
+            <h1 className="text-black font-pop text-[20px] font-medium leading-normal text-center">
               Welcome to OpinioNest
             </h1>
-            <p className="text-base font-normal leading-normal text-center">
+            <p className="text-black font-pop text-base font-normal leading-normal text-center mt-[8px]">
               Pliss complete your login information
             </p>
           </div>
-          <div>
-            <div className="border rounded-md shadow-[0px_0px_2px_rgba(0,0,0,0.10)] cursor-pointer  ">
-              <div className="flex items-center justify-center px-[120px] py-[18px] gap-2">
-                <Image
-                  src="/iconGoogle.svg"
-                  alt="My Image"
-                  width={24} // Lebar gambar
-                  height={24}
-                />
-                <h1>Google Account</h1>
-              </div>
-            </div>
-            <h1 className="pt-4 text-center">or sign in with</h1>
-
-            {inputData.map((input) => (
-              <div key={input.id} className="grid gap-5">
-                <input
-                  type="text"
-                  placeholder="Type here"
-                  className="input input-bordered w-full py-[18px] border rounded "
-                />
-              </div>
-            ))}
+          <button className="flex items-center justify-center px-[120px] py-[18px] border-[1px] border-[#D5D5D5] bg-white shadow-but rounded-[6px] gap-[8px]">
+            <Image
+              src="/iconGoogle.svg"
+              alt="My Image"
+              width={24}
+              height={24}
+            />
+            <h1>Google Account</h1>
+          </button>
+          <h1 className="text-black font-pop text-[16px] font-normal leading-normal py-[16px] text-center">
+            or sign in with
+          </h1>
+          <div className="flex flex-col gap-[16px]">
+            <input
+              type="search"
+              placeholder="Username or email"
+              className="border-[1px] border-[#D5D5D5] w-full bg-transparent shadow-but rounded-[6px] py-[18px] px-[20px]"
+            />
+            <input
+              type="search"
+              placeholder="Password"
+              className="border-[1px] border-[#D5D5D5] w-full bg-transparent shadow-but rounded-[6px] py-[18px] px-[20px]"
+            />
           </div>
-          <AppButton
-            title="Sign in"
-            className="btn text-white py-[18px] flex justify-center"
-          />
+          <button className="bg-primary w-full rounded-[6px] text-white font-pop text-[16px] font-normal leading-normal mt-[16px] py-[18px]">
+            Sign in
+          </button>
         </div>
       </div>
-    </>
+    </div>
   );
 }
