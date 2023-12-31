@@ -4,7 +4,7 @@ import { useState } from "react";
 import ArrowBlue from "../../../public/icons/arrowBlue";
 
 export default function FilterTipe() {
-  const [selectedTipe, setSelectedTipe] = useState("Report");
+  const [selectedTipe, setSelectedTipe] = useState("no filter");
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleDropdown = () => {

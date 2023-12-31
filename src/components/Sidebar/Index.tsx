@@ -65,7 +65,7 @@ export default function Sidebar(props: SidebarProps) {
           <hr className="bg-[#D5D5D5] w-full h-[1px]" />
           <div className="flex flex-col">
             <h3 className="text-black font-pop text-[14px] font-normal leading-[170%]">
-              Filter by type
+              Filter by target
             </h3>
             <FilterTo />
           </div>

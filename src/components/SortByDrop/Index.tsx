@@ -3,16 +3,16 @@ import ButtonDown from "@/components/ButtonDown/Index";
 import { useState } from "react";
 import ArrowBlue from "../../../public/icons/arrowBlue";
 
-export default function FilterTo() {
-  const [selectedGender, setSelectedGender] = useState("no filter");
+export default function SortByDrop() {
+  const [selectedTipe, setSelectedTipe] = useState("no filter");
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
 
-  const handleGenderClick = (gender: string) => {
-    setSelectedGender(gender);
+  const handleTipeClick = (tipe: string) => {
+    setSelectedTipe(tipe);
     setIsOpen(false);
   };
   return (
@@ -21,38 +21,32 @@ export default function FilterTo() {
         className="border-[#D5D5D5] w-full border rounded-[10px] text-komen text-start font-pop text-[12px] font-normal leading-[170%] mt-[8px] focus:outline-none py-[10px] px-[10px]"
         onClick={toggleDropdown}
       >
-        {selectedGender}
+        {selectedTipe}
       </button>
-      <div className="pointer-events-none absolute inset-y-0 right-[10px] top-[10px] flex items-center pr-4">
+      <div className="pointer-events-none absolute inset-y-0 right-[10px] top-[10px] flex flex-row items-center pr-4">
         <ArrowBlue className="w-[16px] text-primary" />
       </div>
 
       {/* Dropdown Content */}
       {isOpen && (
-        <div className="w-full absolute mt-[55px] border border-[#D5D5D5] bg-white rounded-[6px] z-20 py-[10px] px-[10px] divide-y divide-[#D5D5D5]">
+        <div className="w-full absolute mt-[55px] border border-[#D5D5D5] bg-white rounded-[10px] z-20 py-[10px] px-[10px] divide-y divide-[#D5D5D5]">
           <ButtonDown
-            title="Direktorat Keuangan"
+            title="Critique"
             type="text"
             className="text-[12px]"
-            onClick={() => handleGenderClick("Direktorat Keuangan")}
+            onClick={() => handleTipeClick("Critique")}
           />
           <ButtonDown
-            title="DKI"
+            title="Report"
             type="text"
             className="text-[12px]"
-            onClick={() => handleGenderClick("DKI")}
+            onClick={() => handleTipeClick("Report")}
           />
           <ButtonDown
-            title="Serikat Mahasiswa"
+            title="Target"
             type="text"
             className="text-[12px]"
-            onClick={() => handleGenderClick("Serikat Mahasiswa")}
-          />
-          <ButtonDown
-            title="Fakultas Ilmu Rekayasa"
-            type="text"
-            className="text-[12px]"
-            onClick={() => handleGenderClick("Fakultas Ilmu Rekayasa")}
+            onClick={() => handleTipeClick("Target")}
           />
         </div>
       )}
