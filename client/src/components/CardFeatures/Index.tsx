@@ -9,7 +9,7 @@ interface CardFeaturesProps {
 export default function CardFeatures(props: CardFeaturesProps) {
   const { icon, title, desc } = props;
   return (
-    <div className="border-[1px] border-primary rounded-[12px] bg-white shadow-features flex flex-col h-[400px] p-[40px]">
+    <div className="border-[1px] border-[#D5D5D5] rounded-[12px] bg-white flex flex-col h-[400px] p-[40px] hover:border-primary hover:shadow-features">
       <div className="bg-primary w-[80px] p-[24px] rounded-full">{icon}</div>
       <div className="flex flex-col mt-[24px]">
         <h3 className="text-secondary font-pop text-[20px] font-semibold leading-normal">

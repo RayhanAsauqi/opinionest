@@ -6,12 +6,13 @@ import Tags from "../Tags/Index";
 import Discuss from "../../../public/icons/discuss";
 import Like from "../../../public/icons/like";
 import Dislike from "../../../public/icons/dislike";
+import CardStatus from "../card-status";
 
 interface CardDetailProps {
   profile: string;
   name: string;
   hours: string;
-  status?: string;
+  status?: "Open" | "Close";
   type: string;
   to: string;
   title: string;
@@ -26,7 +27,7 @@ export default function CardDetail(props: CardDetailProps) {
     profile,
     name,
     hours,
-    status,
+    status = "Open",
     type,
     to,
     title,
@@ -57,11 +58,7 @@ export default function CardDetail(props: CardDetailProps) {
             </p>
           </div>
         </div>
-        <p
-          className={`border-[1px] border-[#BC8700] p-[10px] rounded-[6px] text-[#BC8700] font-pop text-[12px] font-normal leading-normal ${className}`}
-        >
-          {status}
-        </p>
+        <CardStatus status={status} />
       </div>
       <div className="flex flex-row items-center gap-[4px] mt-[18px]">
         <p className="border-[1px] border-komen px-[8px] py-[4px] rounded-[13px] text-komen font-pop text-[10px] font-normal leading-normal">
@@ -75,15 +72,15 @@ export default function CardDetail(props: CardDetailProps) {
         {title}
       </h3>
 
-      <div className="flex flex-row items-center mt-[16px] gap-[10px] overflow-x-auto">
-        {[1, 2, 3].map((item, index) => (
+      <div className="flex max-w-full items-center mt-[16px] gap-[10px] overflow-x-auto scrollbar">
+        {[1, 2, 3, 4, 5].map((item, index) => (
           <Image
             key={`${item}-${index}`}
             src={`/images/${images}`}
             width={400}
             height={400}
             alt="thumb"
-            className="w-[400px] rounded-[6px] bg-[#D5D5D5]"
+            className="w-[400px] rounded-[6px] bg-[#D5D5D5] shrink-0 mb-1"
           />
         ))}
       </div>

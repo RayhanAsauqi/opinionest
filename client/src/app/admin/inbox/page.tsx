@@ -63,7 +63,7 @@ export default function Inbox() {
             profile="profile.svg"
             name="Reza Arif Maulana"
             hours="2 Hours a go"
-            status="waiting to be resolved"
+            status="Open"
             type="report"
             to="Direktorat TSI"
             title="Lorem ipsum dolor sit amet"

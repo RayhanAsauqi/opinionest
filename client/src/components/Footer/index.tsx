@@ -60,6 +60,32 @@ const itemFooter = [
       },
     ],
   },
+  {
+    id: 4,
+    title: "Talks",
+    item: [
+      {
+        id: 1,
+        text: "All Critiques",
+      },
+      {
+        id: 2,
+        text: "All Aspirations",
+      },
+      {
+        id: 3,
+        text: "All Reports",
+      },
+      {
+        id: 4,
+        text: "to Directorate",
+      },
+      {
+        id: 5,
+        text: "to non Directorate",
+      },
+    ],
+  },
 ];
 
 function Footer() {

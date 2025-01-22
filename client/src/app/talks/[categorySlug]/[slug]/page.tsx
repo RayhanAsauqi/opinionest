@@ -2,7 +2,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Link from "next/link";
 import CardDetail from "@/components/CardDetail/Index";
-import ArrowLeft from "../../../../public/icons/arrowLeft";
+import ArrowLeft from "../../../../../public/icons/arrowLeft";
 import CardChat from "@/components/CardChat/Index";
 import Image from "next/image";
 import CardComment from "@/components/CardComment/Index";
@@ -12,15 +12,15 @@ export default function Detail() {
     <div>
       <Navbar />
       <div className="px-[104px] flex flex-col mt-[60px]">
-        <Link
-          href="/"
-          className="flex flex-row w-[100px] items-center gap-[4px] bg-[#E2F5FF] rounded-[4px] p-[10px] text-primary font-pop text-[10px] font-normal leading-normal"
-        >
-          <span>
-            <ArrowLeft />
-          </span>
-          Back to talks
-        </Link>
+        <div className="flex">
+          <Link
+            href="/"
+            className="flex flex-row items-center gap-[4px] bg-[#E2F5FF] rounded-[4px] p-[10px] text-primary text-sm font-pop font-normal leading-normal"
+          >
+            <ArrowLeft className="w-5 h-5" />
+            Back to talks
+          </Link>
+        </div>
         <div className="flex flex-col mt-[24px]">
           <CardDetail
             profile="profile.svg"
@@ -32,6 +32,7 @@ export default function Detail() {
             desc="Lorem ipsum dolor sit amet. Est dolorem aliquam sit earum enim cum consectetur nisi quo tempore odit aut sunt sunt ut expedita magni? Aut eaque omnis et autem explicabo sed quia maiores non magni odit. Non perspiciatis architecto rem dolor vitae a accusamus minus et eaque sint. A autem voluptas non reiciendis rerum et perspiciatis rerum est dolorem neque!"
             images="profile.svg"
             href="/"
+            status="Open"
             className="hidden"
           />
         </div>
@@ -46,10 +47,11 @@ export default function Detail() {
             <div className="border-[1px] border-[#D5D5D5] rounded-[10px] shadow-sidebar p-[20px] divide-y-2 divide-[#D5D5D5]">
               <CardComment
                 profile="profile.svg"
-                name="Reza Arif Maulana"
+                name="Directorate TSI •"
                 hours="2 minutes ago"
                 comment="Non perspiciatis architecto rem dolor vitae a accusamus minus et eaque sint. A autem voluptas"
                 href="/"
+                isTarget
               />
             </div>
           </div>

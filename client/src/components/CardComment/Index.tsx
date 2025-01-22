@@ -11,6 +11,7 @@ interface CardCommentProps {
   name: string;
   hours: string;
   comment: string;
+  isTarget?: boolean;
   href: string;
 }
 
@@ -20,22 +21,39 @@ export default function CardComment(props: CardCommentProps) {
   const [disagreeClicked, setDisagreeClicked] = useState(false);
   return (
     <div className="flex flex-col">
-      <div className="flex flex-row items-center gap-[8px]">
-        <Image
-          src={`/images/${profile}`}
-          width={28}
-          height={28}
-          alt="profile"
-          className="w-[28px] rounded-full"
-        />
-        <div className="flex flex-row items-center gap-[4px]">
-          <p className="text-black font-pop text-[16px] font-medium leading-normal">
-            {name}
-          </p>
-          <p className="text-komen font-pop text-[16px] font-normal leading-normal">
-            {hours}
-          </p>
+      <div className="flex flex-row items-center justify-between">
+        <div className="flex flex-row items-center gap-[8px]">
+          <Image
+            src={`/images/${profile}`}
+            width={28}
+            height={28}
+            alt="profile"
+            className="w-[28px] rounded-full"
+          />
+          <div className="flex flex-row items-center gap-[4px]">
+            <p className="text-black font-pop text-[16px] font-medium leading-normal">
+              {name}
+            </p>
+            <p className="text-komen font-pop text-[16px] font-normal leading-normal">
+              {hours}
+            </p>
+          </div>
         </div>
+        {props.isTarget && (
+          <div className="flex flex-row items-center bg-[#E2F5FF] px-2 py-1 rounded-md gap-2 text-primary font-pop text-[14px] font-normal leading-normal">
+            Does the response solve the problem?{" "}
+            <button
+              className={` ${agreeClicked ? "text-primary" : "text-komen"}`}
+            >
+              <Like className="w-6 h-6" />
+            </button>
+            <button
+              className={` ${disagreeClicked ? "text-primary" : "text-komen"}`}
+            >
+              <Dislike className="w-6 h-6" />
+            </button>
+          </div>
+        )}
       </div>
       <p className="text-komen font-pop text-[16px] font-normal leading-normal mt-[18px] pl-[36px]">
         {comment}
@@ -70,7 +88,7 @@ export default function CardComment(props: CardCommentProps) {
           }}
         >
           <Dislike />
-          Agree (114)
+          Dislike (14)
         </button>
       </div>
     </div>

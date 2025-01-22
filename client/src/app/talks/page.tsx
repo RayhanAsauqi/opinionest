@@ -7,9 +7,13 @@ export default function Talks() {
   return (
     <div>
       <Navbar />
-      <div className="flex flex-row px-[104px] gap-[16px]">
-        <Sidebar />
-        <ContentTalks />
+      <div className="grid grid-cols-12 px-[104px] gap-[16px]">
+        <div className="col-span-2">
+          <Sidebar />
+        </div>
+        <div className="col-span-10 ">
+          <ContentTalks />
+        </div>
       </div>
       <Footer />
     </div>
